@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main(){
   runApp(myApp());
@@ -215,11 +216,171 @@ void main(){
 //   }
 // }
 
-// App 4 Material slpalash Screen
+// // App 4 Material slpalash Screen
 
+// class myApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         primarySwatch: Colors.red,
+//         ),
+//         title: "MaterialApp",
+//         home: HomePage(),
+      
+//     );
+//   }
+// }
 
+// class HomePage extends StatefulWidget {
+//   @override
+//   _HomePageState createState() => _HomePageState();
+// }
 
+// class _HomePageState extends State<HomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.red,
+//       body: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: <Widget>[
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               // CircularProgressIndicator(
+//               //   backgroundColor: Colors.white,
+//               // )
 
+//               Text(
+//                 "Splash Screen",
+//                 style: TextStyle(
+//                   color: Colors.white,
+//                   fontSize: 30.0,
+//                   fontFamily: "Monteserrat"
+//                 ),
+//               )
+
+//           ],
+//           )
+//       ],
+//       ),
+      
+//     );
+//   }
+// }
+
+// App 5 Login ui
+
+class myApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Login UI",
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        ),
+      home: homePage(),
+    );
+  }
+}
+
+class homePage extends StatefulWidget {
+  @override
+  _homePageState createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Image.asset(
+            'assets/images/coad.jpeg',
+            fit: BoxFit.cover,
+            color: Colors.black54,
+            colorBlendMode: BlendMode.darken,
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 1.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Stack(
+                  children: <Widget>[
+                    SingleChildScrollView(
+                      child: Container(
+                      height: 200.0,
+                      width: 250.0,
+                      padding: EdgeInsets.symmetric(
+                        horizontal:10.0,
+                        vertical : 25.0,
+                      ),
+                      
+                      decoration: BoxDecoration(
+                        color:Colors.transparent,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical : 20.0,
+                          ),
+                          child : TextField(
+                            autocorrect: false,
+                            autofocus: false,
+                            style: TextStyle(
+                              color: Colors.white10,
+                              fontSize: 20.0,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: "Username",
+                              border: InputBorder.none,
+                              filled: true,
+                              fillColor: Colors.orange[100],
+                            ),
+                          ),
+                          ),
+                          TextField(
+                            autocorrect: false,
+                            autofocus: false,
+                            obscureText: true,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: "Password",
+                              border: InputBorder.none,
+                              filled: true,
+                              focusColor: Colors.white,
+                              fillColor: Colors.orange[100],
+                            ),
+                          ),
+
+                      ],
+                      ),
+                    ),
+                    ),
+                ],
+                )
+            ],
+            ),
+          )
+
+        ],
+      ),
+      
+    );
+  }
+}
 
 
 
